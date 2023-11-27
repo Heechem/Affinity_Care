@@ -5,8 +5,9 @@ import { aboutContent, contactData } from '@/lib/data';
 import React from 'react';
 import ImgContact from '../../public/contactImg.jpg';
 import SubmitBtn from '@/components/SubmitBtn';
-import { sendEmail } from '../api/send/route';
+
 import toast from 'react-hot-toast';
+import { sendEmail } from '../action/setEmail';
 
 const Contact = () => {
   return (
