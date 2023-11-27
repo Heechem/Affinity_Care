@@ -2,26 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.pText {
+  @apply my-4 ml-2  font-semibold;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.hTitle {
+  @apply text-2xl  capitalize ml-6 pt-2;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.linkServiceList {
+  @apply hover:p-1 hover:underline hover:underline-offset-1 transition-all duration-200 ease-in-out;
+}
+
+.serviceList {
+  @apply hover:underline hover:underline-offset-2 cursor-pointer hover:bg-slate-200 hover:bg-opacity-30 hover:p-3 hover:rounded-lg transition-all  ease-in-out;
 }

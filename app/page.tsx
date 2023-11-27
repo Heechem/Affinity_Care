@@ -1,113 +1,108 @@
-import Image from 'next/image'
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import Video from 'next/image';
+import { TypeAnimation } from 'react-type-animation';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="flex flex-col justify-between mb-10">
+      <div className="flex flex-col sm:flex-row  w-full justify-center items-center mt-12 mb-20 ">
+        <div className="flex flex-col justify-between items-center px-4 w-1/2 mb-10 text-center z-[99] h-[68%] text-3xl">
+          {/* <p>Affinity Respite Services</p>
+          <p>Care services that you won&apos;t find anywhere else</p>
+          <p>More details </p> */}
+          <p className="mb-5">Affinity Respite Services</p>
+          <TypeAnimation
+            sequence={[
+              "Care services that you won't find anywhere else",
+              1000,
+              'Fro more details :',
+              1000,
+            ]}
+            speed={50}
+            repeat={Infinity}
+          />
+
+          <div className="mt-6 active:scale-95 ">
+            <Link
+              href={'/contact'}
+              className="mt-6 border w-1/3 text-center p-4 rounded-xl shadow-md text-xl  hover:bg-amber-400 transition-all ease-in-out"
+            >
+              Contact us
+            </Link>
+          </div>
+        </div>
+        <div className="flex items-center justify-center  w-1/2">
+          <video
+            autoPlay
+            style={{ width: '100%', borderRadius: '10px' }}
+            loop
+            muted
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <source src="/homevid.mp4" />
+          </video>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+      <div className=" mt-10">
+        <h2 className="hTitle  text-center">Welcome to Affinity Home Care</h2>
+        <p className="pText">
+          At Affinity, we believe in more than just care; we believe in
+          compassionate support tailored to your needs. Our mission is to
+          provide exceptional care services that bring comfort, trust, and
+          reliability into your home.
+        </p>
+        <h2 className="hTitle">Who We Are</h2>
+        <p className="pText">
+          Affinity Home Care is a dedicated team of professionals committed to
+          enhancing the quality of life for our clients. With a focus on
+          personalized care plans, we prioritize your well-being above all else.
+          Our caregivers are extensively trained, compassionate, and dedicated
+          to ensuring your comfort and safety.
+        </p>
+        <Link
+          href={'/service'}
+          className="hTitle  underline underline-offset-2 hover:text-amber-400"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          Our Services
+        </Link>
+        <p className="pText">
+          We offer a comprehensive range of home care services designed to meet
+          your unique requirements. Whether it&apos;s assistance with daily
+          activities, skilled nursing care, companionship, or specialized
+          support, we&apos;re here to help. Our goal is to empower you to live
+          life to the fullest in the comfort of your own home.
+        </p>
+        <h2 className="hTitle">Why Choose Affinity</h2>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <ul className=" list-outside ml-2 my-4">
+          <li>
+            Personalized Care: Tailored care plans that suit your individual
+            needs.
+          </li>
+          <li>
+            Compassionate Team: Trained professionals who genuinely care about
+            your well-being.
+          </li>
+          <li>Trust & Reliability: Dependable services you can count on.</li>
+          <li>
+            Commitment to Excellence: Striving for the highest quality care for
+            every client.
+          </li>
+        </ul>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={'/contact'}
+          className="hTitle hover:text-amber-400  underline underline-offset-2"
         >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          Get In Touch
+        </Link>
+        <p className="pText">
+          Ready to experience exceptional home care? Contact us today to discuss
+          how Affinity Home Care can provide the support and assistance you
+          deserve.
+        </p>
       </div>
     </main>
-  )
+  );
 }
