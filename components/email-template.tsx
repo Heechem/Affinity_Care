@@ -26,13 +26,13 @@ function ContactFormEmail({ message, senderEmail }: ContactFormemailProps) {
   return (
     <Html>
       <Head />
-      <Preview>New Message from the portfolio</Preview>
+      <Preview>New Message from the Affinity care</Preview>
       <Tailwind>
         <Body className="bg-gray-100 text-black">
           <Container>
             <Section className=" bg-white borderBlack my-10 px-10 py-4 rounded-md">
               <Heading className=" leading-tight">
-                Message sent from your porfolio
+                Message sent from your affinity care
               </Heading>
               <Text>{message}</Text>
               <Hr />
