@@ -30,10 +30,10 @@ export async function sendEmail(FormData: FormData) {
       subject: 'Message from affinity Care',
       reply_to: senderEmail as string,
       text: 'message from affinity',
-      // react: React.createElement(ContactFormEmail, {
-      //   message: message as string,
-      //   senderEmail: senderEmail as string,
-      // }),
+      react: ContactFormEmail({
+        message: message as string,
+        senderEmail: senderEmail as string,
+      }),
     });
   } catch (error: unknown) {
     return { error: getErrorMessage(error) };
